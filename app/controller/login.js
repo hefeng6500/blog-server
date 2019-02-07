@@ -33,6 +33,10 @@ class HomeController extends Controller {
 
     ctx.body = await ctx.service.user.login(username,password)
   }
+
+  async success(){
+    this.ctx.body = this.ctx.state.user;
+  }
 }
 
 module.exports = HomeController;

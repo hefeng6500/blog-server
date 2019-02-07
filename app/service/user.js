@@ -7,11 +7,15 @@ class UserService extends Service {
     
     const results = await app.mysql.query(`SELECT * FROM user_list WHERE username=? AND password=?`, [username,password]);
     const user = results[0]
-    const token = jwt.sign({
+    // const token = jwt.sign({
+    //   name: user.username,
+    //   id: user.id,
+    // }, config.tokenSecret, { expiresIn: '20s' });
+
+    const token = app.jwt.sign({
       name: user.username,
       id: user.id,
-      time: Date.now()
-    }, config.tokenSecret, { expiresIn: '2h' });
+    }, config.jwt.secret,{ expiresIn: '2h' });
 
     let userInfo = {
       success: 1,
@@ -21,6 +25,7 @@ class UserService extends Service {
         token: token
       }
     }
+
     return userInfo
   }
 }

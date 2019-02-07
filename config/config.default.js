@@ -11,7 +11,7 @@ module.exports = appInfo => {
     },
     mysql: {
       client: {
-        host: 'localhost',
+        host: '127.0.0.1',
         port: '3306',
         user: 'root',
         password: '123456',
@@ -21,8 +21,19 @@ module.exports = appInfo => {
       app: true,
       // load into agent, default is close
       agent: false,
+    },
+    redis: {
+      client: {
+        port: 6379,          // Redis port
+        host: '127.0.0.1',   // Redis host
+        password: 'foobared',
+        db: 0,
+      }
+    },
+    jwt: {
+      secret: "123456"
     }
-  };
+  }
 
   // use for cookie sign key, should change to your own and keep security
   config.keys = appInfo.name + '_1549424148438_2260';

@@ -1,4 +1,10 @@
+const jwt = require('jsonwebtoken')
+const util = require('util')
+
+const verify = util.promisify(jwt.verify);
+
 module.exports = (options, app) => {
+  const { config } = app
   return async function(ctx, next) {
     try {
       // 获取jwt

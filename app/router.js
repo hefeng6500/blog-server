@@ -11,8 +11,9 @@ module.exports = app => {
 
   router.prefix('/api') // 添加路由前缀
 
-  router.get('/', controller.home.index);
+  router.get('/',app.jwt, controller.home.index); // app.jwt 代表该路由会验证 token
   router.get('/getCode', controller.login.getCode);
   router.post('/login', controller.login.login);
+  router.get('/success', controller.login.success);
 
 };

@@ -6,9 +6,11 @@
   "dependencies": {
     "egg": "^2.2.1",
     "egg-cors": "^2.1.2",
+    "egg-jwt": "^3.1.5",
     "egg-mysql": "^3.0.0",
     "egg-passport": "^2.0.1",
     "egg-passport-github": "^1.0.0",
+    "egg-redis": "^2.3.0",
     "egg-scripts": "^2.5.0",
     "egg-view-react": "^1.1.0",
     "jsonwebtoken": "^8.4.0",
