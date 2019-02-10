@@ -27,7 +27,7 @@ module.exports = (options, app) => {
         ctx.status = 401;
         ctx.body = {
           success: 0,
-          message: '认证失败'
+          message: '用户身份认证过期，请重新登录'
         };
       } else {
         err.status = 404;

@@ -10,6 +10,8 @@ class HomeController extends Controller {
   async getCode(){
     const { ctx } = this;
     let codeInfo = svgCaptcha.create({
+			width: 120,
+			height: 40,
       size: 4, // 验证码长度
       ignoreChars: '012iIlLoOzZ', // 验证码字符中排除 
       noise: 3, // 干扰线条的数量
@@ -30,7 +32,8 @@ class HomeController extends Controller {
     const { ctx, app } = this;
     const username = ctx.request.body.username
     const password = ctx.request.body.password
-
+		const code = ctx.request.body.code
+		
     ctx.body = await ctx.service.user.login(username,password)
   }
 

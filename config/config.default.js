@@ -42,7 +42,7 @@ module.exports = appInfo => {
 
   // add your config here
   config.middleware = [
-    'tokenVaild'
+		'tokenValid'
   ];
 
   // 关闭csrf

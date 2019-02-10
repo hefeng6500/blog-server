@@ -15,7 +15,7 @@ class UserService extends Service {
     const token = app.jwt.sign({
       name: user.username,
       id: user.id,
-    }, config.jwt.secret,{ expiresIn: '2h' });
+    }, config.jwt.secret,{ expiresIn: '10s' });
 
     let userInfo = {
       success: 1,
