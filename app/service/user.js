@@ -2,10 +2,10 @@ const Service = require('egg').Service;
 const jwt = require('jsonwebtoken');
 
 class UserService extends Service {
-  async login(username,password) {
-    const { ctx,config, app } = this;
-    
-    const results = await app.mysql.query(`SELECT * FROM user_list WHERE username=? AND password=?`, [username,password]);
+  async login(username, password) {
+    const { ctx, config, app } = this;
+
+    const results = await app.mysql.query(`SELECT * FROM user_list WHERE username=? AND password=?`, [username, password]);
     const user = results[0]
     // const token = jwt.sign({
     //   name: user.username,
@@ -15,13 +15,14 @@ class UserService extends Service {
     const token = app.jwt.sign({
       name: user.username,
       id: user.id,
-    }, config.jwt.secret,{ expiresIn: '10s' });
+    }, config.jwt.secret, { expiresIn: '2h' });
 
     let userInfo = {
       success: 1,
       message: '',
       data: {
-        userInfo: user,
+        userId: user.id,
+        username: user.username,
         token: token
       }
     }

@@ -15,7 +15,7 @@ module.exports = appInfo => {
         port: '3306',
         user: 'root',
         password: '123456',
-        database: 'nodeserver',    
+        database: 'nodeserver',
       },
       // load into app, default is open
       app: true,
@@ -26,7 +26,7 @@ module.exports = appInfo => {
       client: {
         port: 6379,          // Redis port
         host: '127.0.0.1',   // Redis host
-        password: 'foobared',
+        password: '',
         db: 0,
       }
     },
@@ -38,11 +38,11 @@ module.exports = appInfo => {
   // use for cookie sign key, should change to your own and keep security
   config.keys = appInfo.name + '_1549424148438_2260';
   config.tokenSecret = "nodeServer"
-  
+
 
   // add your config here
   config.middleware = [
-		'tokenValid'
+    'tokenValid'
   ];
 
   // 关闭csrf
@@ -54,7 +54,8 @@ module.exports = appInfo => {
     domainWhiteList: ['http://localhost:3000']
   };
   config.cors = {
-    // origin:'*',
+    credentials: true,
+    origin:'http://localhost:3000',
     allowMethods: 'GET,HEAD,PUT,POST,DELETE,PATCH'
   };
 
