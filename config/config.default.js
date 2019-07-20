@@ -22,14 +22,14 @@ module.exports = appInfo => {
       // load into agent, default is close
       agent: false,
     },
-    redis: {
-      client: {
-        port: 6379,          // Redis port
-        host: '127.0.0.1',   // Redis host
-        password: '',
-        db: 0,
-      }
-    },
+    // redis: {
+    //   client: {
+    //     port: 6379,          // Redis port
+    //     host: '127.0.0.1',   // Redis host
+    //     password: '',
+    //     db: 0,
+    //   }
+    // },
     jwt: {
       secret: "123456"
     }

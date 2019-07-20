@@ -9,16 +9,18 @@ module.exports = (options, app) => {
     try {
       // 获取jwt
       const token = ctx.header.authorization; 
+      console.log('token', ctx.header)
       if (token) {
         try {
           // 解密payload，获取用户名和ID
           let payload = await verify(token.split(' ')[1], config.tokenSecret);
+          
           ctx.user = {
             name: payload.name,
             id: payload.id
           };
         } catch (err) {
-          console.log('token verify fail: ', err)
+          console.log('token验证失败: ', err)
         }
       }
       await next();

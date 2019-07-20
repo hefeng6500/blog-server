@@ -11,7 +11,7 @@ class HomeController extends Controller {
     const { ctx, app } = this;
     let codeInfo = svgCaptcha.create({
       width: 120,
-      height: 40,
+      height: 32,
       size: 4, // 验证码长度
       ignoreChars: '012iIlLoOzZ', // 验证码字符中排除 
       noise: 3, // 干扰线条的数量
@@ -23,8 +23,7 @@ class HomeController extends Controller {
       success: 1,
       message: '',
       data: {
-        data: codeInfo.data,
-        text: codeInfo.text
+        data: codeInfo.data
       }
     }
   }
