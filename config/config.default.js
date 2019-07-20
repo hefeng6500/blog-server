@@ -31,7 +31,7 @@ module.exports = appInfo => {
     //   }
     // },
     jwt: {
-      secret: "123456"
+      secret: "nodeServer"
     }
   }
 
@@ -42,6 +42,7 @@ module.exports = appInfo => {
 
   // add your config here
   config.middleware = [
+    'tokenError',
     'tokenValid'
   ];
 

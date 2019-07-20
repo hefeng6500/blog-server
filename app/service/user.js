@@ -15,7 +15,7 @@ class UserService extends Service {
     const token = app.jwt.sign({
       name: user.username,
       id: user.id,
-    }, config.jwt.secret, { expiresIn: '20min' });
+    }, config.jwt.secret, { expiresIn: '2000h' });
 
     let userInfo = {
       success: 1,
@@ -28,6 +28,12 @@ class UserService extends Service {
     }
 
     return userInfo
+  }
+
+  async queryUser(user_id) {
+    const { ctx, config, app } = this;
+    const result = await app.mysql.get('user', { user_id: user_id })
+    return result
   }
 }
 

@@ -1,5 +1,7 @@
 const LocalStrategy = require('passport-local').Strategy;
 
+
+
 module.exports = app => {
   // 挂载 strategy
   app.passport.use(new LocalStrategy({
@@ -15,7 +17,7 @@ module.exports = app => {
     app.passport.doVerify(req, user, done);
   }));
 
-  
+
 
 
   // 处理用户信息

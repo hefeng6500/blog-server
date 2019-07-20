@@ -9,7 +9,7 @@ module.exports = (options, app) => {
     try {
       // 获取jwt
       const token = ctx.header.authorization; 
-      console.log('token', ctx.header)
+      console.log('token', ctx.header.authorization)
       if (token) {
         try {
           // 解密payload，获取用户名和ID
@@ -19,10 +19,13 @@ module.exports = (options, app) => {
             name: payload.name,
             id: payload.id
           };
+          console.log(payload)
+          // await next();
         } catch (err) {
           console.log('token验证失败: ', err)
         }
       }
+
       await next();
     } catch (err) {
       if (err.status === 401) {
