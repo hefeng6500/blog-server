@@ -25,9 +25,9 @@ module.exports = (options, app) => {
           console.log('token验证失败: ', err)
         }
       }
-
       await next();
     } catch (err) {
+      console.log(err)
       if (err.status === 401) {
         ctx.status = 401;
         ctx.body = {

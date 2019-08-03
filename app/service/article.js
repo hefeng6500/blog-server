@@ -59,7 +59,7 @@ class Article extends Service {
       })
       
     } else {
-      result = await app.mysql.get('article_list', { article_id: params.article_id })
+      result = await app.mysql.get('article_list', { article_id: params.articleId })
     }
     return result
   }

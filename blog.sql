@@ -23,8 +23,8 @@ INSERT INTO
 VALUES
   (
     NULL,
-    'admin',
-    'hefeng6500',
+    '行者无疆',
+    '8f4de129e33c7bfcbfdde47608b0458c',
     '0',
     '杨龙',
     '2019-07-10 20:20:55',

@@ -16,9 +16,9 @@ module.exports = app => {
   router.get('/getCode', controller.login.getCode);
   router.post('/login', controller.login.login);
   router.get('/success', controller.login.success);
-  router.get('/getArticles',app.jwt, controller.article.getArticles);
+  router.get('/getArticles', controller.article.getArticles);
   router.post('/publishArticle', app.jwt, controller.article.publishArticle);
   
-  router.get('/queryUser', app.jwt, controller.user.queryUser);
+  router.get('/queryUser', controller.user.queryUser);
 
 };

@@ -34,7 +34,7 @@ class HomeController extends Controller {
     const { code, type } = ctx.request.body
     const username = ctx.request.body.username
     const password = ctx.request.body.password
-    const validCode = ctx.request.body.validCode
+    const validCode = ctx.request.body.code
 
     // function formatCookies(str){
     //   let arr = str.split("; ")

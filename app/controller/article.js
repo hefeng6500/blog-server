@@ -9,9 +9,9 @@ class Article extends Controller {
   // 查询用户的文章
   async getArticles() {
     const { ctx, app } = this;
-    const { type, user_id } = ctx.request.query
+    const { type, userId } = ctx.request.query
     const res = await ctx.service.article.select(ctx.request.query)
-    const userInfo = await ctx.service.user.queryUser(parseInt(user_id))
+    const userInfo = await ctx.service.user.queryUser(parseInt(userId))
 
     if (type === 'details') {
       res.create_time = parseTime(new Date(res.create_time).getTime())

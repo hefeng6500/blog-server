@@ -11,25 +11,18 @@ module.exports = appInfo => {
     },
     mysql: {
       client: {
-        host: 'localhost',
-        port: '3306',
-        user: 'root',
-        password: '123456',
-        database: 'nodeserver',
+        host: '主机地址',
+        port: '端口号',
+        user: 'mysql用户名',
+        password: 'mysql密码',
+        database: '数据库名',
       },
       // load into app, default is open
       app: true,
       // load into agent, default is close
       agent: false,
     },
-    // redis: {
-    //   client: {
-    //     port: 6379,          // Redis port
-    //     host: '127.0.0.1',   // Redis host
-    //     password: '',
-    //     db: 0,
-    //   }
-    // },
+
     jwt: {
       secret: "nodeServer"
     }
@@ -50,11 +43,11 @@ module.exports = appInfo => {
     csrf: {
       enable: false
     },
-    domainWhiteList: ['http://127.0.0.1:3000']
+    domainWhiteList: ['https://www.hefeng6500.cn']
   };
   config.cors = {
     credentials: true,
-    origin: 'http://127.0.0.1:3000',
+    origin:'https://www.hefeng6500.cn',
     allowMethods: 'GET,HEAD,PUT,POST,DELETE,PATCH'
   };
 
