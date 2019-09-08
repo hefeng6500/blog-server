@@ -1,7 +1,7 @@
 -- 创建数据库
 DROP DATABASE IF EXISTS nodeserver;
 
-CREATE DATABASE nodeserver;
+CREATE DATABASE nodeserver charset utf8; // 修改数据库编码格式
 USE nodeserver;
 
 -- 创建用户表
@@ -43,7 +43,7 @@ CREATE TABLE article_list (
     title VARCHAR(32),
     content TEXT,
     tags VARCHAR(32),
-    category VARCHAR(32),
+    category VARCHAR(128),
     type TINYINT,
     forms TINYINT,
     numbers INT,

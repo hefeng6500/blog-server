@@ -25,8 +25,8 @@ class Article extends Service {
     const results = await app.mysql.insert('article_list', {
       article_id: null,
       user_id: userId,
-      create_time: '2019-07-20 13:52:00',
-      last_modify: '2019-07-20 13:52:00',
+      create_time: parseTime(createTime),
+      last_modify: parseTime(lastModify),
       title: title,
       content: content,
       tags: tags.join(),

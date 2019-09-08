@@ -4,6 +4,17 @@ const Controller = require('egg').Controller;
 // const service = require('../service/article');
 const qs = require("qs");
 const parseTime = require('../utils/parseTime.js')
+const Remarkable = require('remarkable');
+const toc = require('markdown-toc');
+
+// function render(str, options) {
+//   return new Remarkable()
+//     .use(toc.plugin(options)) // <= register the plugin
+//     .render(str);
+// }
+
+var results = toc('# AAA\n# BBB\n# CCC\nfoo\nbar\nbaz');
+console.log(results)
 
 class Article extends Controller {
   // 查询用户的文章
@@ -17,6 +28,7 @@ class Article extends Controller {
       res.create_time = parseTime(new Date(res.create_time).getTime())
       res.last_modify = parseTime(new Date(res.last_modify).getTime())
       res.username = userInfo.username
+      res.results = toc(res.content)
     }
 
     ctx.body = {
