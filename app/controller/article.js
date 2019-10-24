@@ -1,3 +1,11 @@
+/*
+ * @Author: your name
+ * @Date: 2019-07-06 12:14:14
+ * @LastEditTime: 2019-10-24 22:19:02
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \egg-example\app\controller\article.js
+ */
 'use strict';
 
 const Controller = require('egg').Controller;
@@ -28,7 +36,6 @@ class Article extends Controller {
       res.create_time = parseTime(new Date(res.create_time).getTime())
       res.last_modify = parseTime(new Date(res.last_modify).getTime())
       res.username = userInfo.username
-      res.results = toc(res.content)
     }
 
     ctx.body = {

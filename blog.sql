@@ -1,7 +1,7 @@
 -- 创建数据库
 DROP DATABASE IF EXISTS nodeserver;
-
-CREATE DATABASE nodeserver charset utf8; // 修改数据库编码格式
+-- 修改数据库编码格式
+CREATE DATABASE nodeserver charset utf8; 
 USE nodeserver;
 
 -- 创建用户表
@@ -24,7 +24,7 @@ VALUES
   (
     NULL,
     '行者无疆',
-    '8f4de129e33c7bfcbfdde47608b0458c',
+    '11861891702b4115e0acc11fcf683e40',
     '0',
     '杨龙',
     '2019-07-10 20:20:55',
